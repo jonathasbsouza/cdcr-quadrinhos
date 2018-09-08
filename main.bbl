@@ -1,3 +1,42 @@
-\begin{thebibliography}{}
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem[Cunningham e Stanovich 2001]{Cunningham2001}
+\abntrefinfo{Cunningham e Stanovich}{CUNNINGHAM; STANOVICH}{2001}
+{CUNNINGHAM, A.~E.; STANOVICH, K.~E. {What Reading does for mind}.
+\emph{Journal of Direct Instruction}, v.~1, n.~2, p. 137--149, 2001.}
+
+\bibitem[Levy 1997]{Levy1997}
+\abntrefinfo{Levy}{LEVY}{1997}
+{LEVY, D. {I read the news today, oh boy: reading and attention in digital
+  libraries}.
+\emph{ACM international conference on Digital libraries}, p. 202--211, 1997.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=263817}.}
+
+\bibitem[Liu 2005]{Liu2005}
+\abntrefinfo{Liu}{LIU}{2005}
+{LIU, Z. {Reading behavior in the digital environment: Changes in reading
+  behavior over the past ten years}.
+\emph{Journal of Documentation}, 2005.
+ISSN 00220418.}
+
+\bibitem[Mangen e Weel 2016]{Mangen2016}
+\abntrefinfo{Mangen e Weel}{MANGEN; WEEL}{2016}
+{MANGEN, A.; WEEL, A. van~der. {The evolution of reading in the age of
+  digitisation: an integrative framework for reading research}.
+\emph{Literacy}, v.~50, n.~3, p. 116--124, 2016.
+ISSN 17414369.}
+
+\bibitem[O'Brien e Scharber 2008]{OBrien2008}
+\abntrefinfo{O'Brien e Scharber}{O'BRIEN; SCHARBER}{2008}
+{O'BRIEN, D.; SCHARBER, C. {Digital Literacies Go to School: Potholes and
+  Possibilities}.
+\emph{Journal of Adolescent {\&} Adult Literacy}, v.~52, n.~1, p. 66--68, 2008.
+ISSN 10813004.
+Dispon{\'\i}vel em: \url{http://doi.wiley.com/10.1598/JAAL.52.1.7}.}
 
 \end{thebibliography}

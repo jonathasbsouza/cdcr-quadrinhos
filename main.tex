@@ -1,20 +1,262 @@
-\documentclass[12pt, a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{Alegreya} %% Option 'black' gives heavier bold face 
-\renewcommand*\oldstylenums[1]{{\AlegreyaOsF #1}}
-\title{Scientific Reports Title to see here}
+\documentclass[
+	% -- opções da classe memoir --
+	article,			% indica que é um artigo acadêmico
+	11pt,				% tamanho da fonte
+	oneside,			% para impressão apenas no recto. Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	sumario=tradicional
+	]{abntex2}
 
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{AlegreyaSans} %% Option 'black' gives heavier bold face
+%% The 'sfdefault' option to make the base font sans serif
+\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+\renewcommand{\ABNTEXchapterfont}{\fontseries{b}\selectfont}
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+% ---
+		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+		
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+
+% ---
+
+% --- Informações de dados para CAPA e FOLHA DE ROSTO ---
+\titulo{A leitura em papel e em dispositivos digitais e sua influência na compreensão de histórias em quadrinhos}
+
+\autor{
+Jônathas Souza\thanks{Departamento de Design, Centro de Artes e Comunicação, Universidade Federal de Pernambuco. Endereço para contato: \url{jonathas.barrossouza@ufpe.br}},  
+Ana Beatriz Coutinho\thanks{Departamento de Design, Centro de Artes e Comunicação, Universidade Federal de Pernambuco} e Matheus Alencar\thanks{Departamento de Design, Centro de Artes e Comunicação, Universidade Federal de Pernambuco}}
+
+\local{Brasil}
+\data{2018}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={A leitura em papel e em dispositivos digitais e sua influência na compreensão de histórias em quadrinhos},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=black,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ---
+% Altera as margens padrões
+% ---
+\setlrmarginsandblock{3cm}{3cm}{*}
+\setulmarginsandblock{3cm}{3cm}{*}
+\checkandfixthelayout
+% ---
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento simples
+\OnehalfSpace
+
+
+% ----
+% Início do documento
+% ----
 \begin{document}
 
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+%---
+%
+% Se desejar escrever o artigo em duas colunas, descomente a linha abaixo
+% e a linha com o texto ``FIM DE ARTIGO EM DUAS COLUNAS''.
+% \twocolumn[    		% INICIO DE ARTIGO EM DUAS COLUNAS
+%
+%---
+
+% página de titulo principal (obrigatório)
 \maketitle
 
-\section{Introduction}
-There is a theory which states that if ever anyone\footnote{really anyone} discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable.
-There is another theory which states that this has already happened.
-\section{Revisão de Literatura}
-Conclusao
 
-\bibliographystyle{plain}
+% titulo em outro idioma (opcional)
+
+
+
+% resumo em português
+\begin{resumoumacoluna}
+ \lipsum[150]
+ 
+ \vspace{\onelineskip}
+ 
+ \noindent
+ \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+\end{resumoumacoluna}
+
+
+% resumo em inglês
+\renewcommand{\resumoname}{Abstract}
+\begin{resumoumacoluna}
+ \begin{otherlanguage*}{english}
+   \lipsum[150]
+
+   \vspace{\onelineskip}
+ 
+   \noindent
+   \textbf{Keywords}: latex. abntex.
+ \end{otherlanguage*}  
+\end{resumoumacoluna}
+
+% ]  				% FIM DE ARTIGO EM DUAS COLUNAS
+% ---
+
+\begin{center}\smaller
+\textbf{Data de submissão e aprovação}: elemento obrigatório. Indicar dia, mês e ano
+\end{center}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\section{Introdução}
+
+\lipsum[55-57]
+% ----------------------------------------------------------
+% Seção de explicações
+% ----------------------------------------------------------
+\section{Revisão de Literatura}
+
+Ler é um ato extremamente importante do ponto de vista sociocultural. \textcolor{red}{\textbf{FALAR AQUI DE ALFABETISMO, ANALFABETISMO E ANALFABETISMO FUNCIONAL}}. O ato de ler também tem consequências que ultrapassam sua tarefa imediata de absorver sentido de uma passagem, tendo implicações profundas no desenvolvimento de um grande número de capacidades cognitivas \cite{Cunningham2001}.
+Entretanto, a concepção de leitura tem passado por grandes modificações, a partir do aparecimento das mídias digitais e do maior consumo de texto a partir de dispositivos como e-readers (ex. Kindle) e tablets (ex. iPad), que possuem características completamente diferentes das do texto impresso \cite{Mangen2016}. Esse número crescente de novas mídias forçou, inclusive, novas interpretações de termos como “texto”, “leitura” e “alfabetização”, levando ao surgimento do conceito de “alfabetização digital”, que representa “práticas socialmente situadas e suportadas por habilidades, estratégias e instâncias que permitem a representação e o entendimento de ideias utilizando uma variedade de modalidades possibilitadas por ferramentas digitais” \cite{OBrien2008}.
+
+A leitura também é vista como um processo de alta concentração. Levy relembra as principais representações do momento da leitura: um no início da vida, quando a criança tenta dar seus primeiros passos na leitura de um texto, empregando total concentração e esforço, e outro durante a vida, nos momentos de estudo e leitura concentrada e silenciosa. A própria imagem da biblioteca silenciosa denota esta percepção \cite{Levy1997}. Entretanto, a multiplicidade de mídias e dispositivos levou a sociedade a adquirir um estado de atenção dividida, onde a leitura tem se tornado menos imersiva e demandado maior concentração do que jogar, assistir ou ouvir, principalmente por essas atividades serem acessadas nos mesmos dispositivos \cite{Mangen2016}.
+
+A mídia digital contribui para uma mudança radical na leitura, além de introduzir uma série de vantagens que estão tradicionalmente ausentes na versão impressa de um texto, tais como interatividade, não-linearidade, acesso imediato à informação secundária, e a convergência de texto e imagens, audio e video \cite{Liu2005}
+
+ 	Mangen faz questão de 
+
+
+\section{Metodologia}
+
+\lipsum[55-55]
+
+\section{Resultados}
+
+\subsection{Experimento 1}
+
+\lipsum[55]
+
+\subsection{Experimento 2}
+
+\lipsum[55]
+
+\section{Discussão}
+
+\lipsum[55]
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+% ---
+
+% ---
+% Conclusão
+% ---
+\section{Considerações finais}
+
+\lipsum[1]
+
+\begin{citacao}
+\lipsum[2]
+\end{citacao}
+
+\lipsum[3]
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+
 \bibliography{references}
+
+
+% ----------------------------------------------------------
+% Agradecimentos
+% ----------------------------------------------------------
+
+\section*{Agradecimentos}
+Texto sucinto aprovado pelo periódico em que será publicado. Último 
+elemento pós-textual.
+
 \end{document}
